@@ -16,8 +16,7 @@ def about_page(request):
         'content': 'Welcome to About page'
     }
     return render(request, "about/view.html", context)
-
-    
+   
 def contact_page(request):
     context = {
         'title': 'Contact', 
