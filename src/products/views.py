@@ -8,6 +8,11 @@ class ProductListView(ListView):
     #traz todos os produtos do banco de dados sem filtrar nada 
     queryset = Product.objects.all()
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProductListView, self).get_context_data(*args, **kwargs)
+        print(context)
+        return context
+
 #Function Based View
 def product_list_view(request):
     queryset = Product.objects.all()
@@ -15,3 +20,5 @@ def product_list_view(request):
         'qs': queryset
     }
     return render(request, "products/list.html", context)
+
+   
